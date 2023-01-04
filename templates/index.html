@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Search</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <h3>OpenAI GPT-3</h3>
+  <div class="header">This application uses the OpenAI GPT-3 Davinci model for understanding and generating natural language questions and answers. Training data is circa 2021.</div>
+  <form action="/" method="post">
+    <input type="text" name="question" id="question" placeholder="Ask a question" required />
+    <input type="submit" value="Get the answer" />
+  </form>
+  {% if result %}
+  <div class="query">You asked: {{ query }}</div>
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
